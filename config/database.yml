@@ -1,0 +1,22 @@
+# PostgreSQL. Versions 9.3 and up are supported.
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  host: <%= ENV.fetch("DB_HOST", 'db') %> # db # localhost
+  username: <%= ENV.fetch("DB_USERNAME", 'postgres') %>
+  password: <%= ENV.fetch("DB_PASSWIRRD", 'postgres') %>
+  database: <%= ENV.fetch("DEVELOPMENT_DB", 'recipe_development') %>
+
+test:
+  <<: *default
+  database: <%= ENV.fetch("TEST_DB", 'recipe_test') %>
+
+production:
+  <<: *default
+  database: <%= ENV.fetch("DATABASE_URL", "") %>
