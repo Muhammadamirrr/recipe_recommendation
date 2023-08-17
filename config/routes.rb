@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy', as: 'logout'
 

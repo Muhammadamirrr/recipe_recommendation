@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SpoonacularService
   include HTTParty
   base_uri 'https://api.spoonacular.com/recipes'
