@@ -49,6 +49,8 @@ gem 'httparty'
 
 group :development, :test do
   gem 'rubocop-rails', require: false
+  gem 'faker'
+  gem 'rails-controller-testing'
 
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -56,9 +58,11 @@ end
 
 group :test do
   gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'webmock'
+
+  # Ruby gems for feature testing
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end

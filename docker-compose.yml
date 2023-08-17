@@ -15,6 +15,12 @@ services:
     environment:
       RAILS_ENV: development
     command: bundle exec puma -C config/puma.rb
+  selenium:
+    image: selenium/standalone-chrome:latest
+    ports:
+       - 4444:4444
+       - 7900:7900
+       - 5900:5900
 
   db:
     image: postgres:13
