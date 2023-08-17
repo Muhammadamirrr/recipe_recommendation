@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <img src="<%= @recipe['image'] %>" class="card-img-top" alt="<%= @recipe['title'] %>">
+        <div class="card-body">
+          <h2 class="card-title"><%= @recipe['title'] %></h2>
+          <h5 class="card-subtitle mb-3"><%= @recipe['readyInMinutes'] %> minutes</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Ingredients:</h6>
+          <ul>
+            <% @recipe['extendedIngredients'].each do |ingredient| %>
+              <li><%= ingredient['original'] %></li>
+            <% end %>
+          </ul>
+          <h6 class="card-subtitle mb-2 text-muted">Instructions:</h6>
+          <p><%= @recipe['instructions'].html_safe %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
