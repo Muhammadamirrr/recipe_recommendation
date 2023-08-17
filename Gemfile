@@ -61,4 +61,9 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'webmock'
+
+  # Ruby gems for feature testing
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
+gem 'byebug'
