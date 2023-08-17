@@ -4,11 +4,7 @@ RSpec.feature 'User Login', type: :feature do
   scenario 'user can log in with valid credentials' do
     user = create(:user, email: 'user@example.com', password: 'password123')
 
-    visit new_session_path
-
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log In'
+    login_user(user)
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content('Successfully logged in.')
