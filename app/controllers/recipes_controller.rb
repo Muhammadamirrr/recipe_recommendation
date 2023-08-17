@@ -1,8 +1,5 @@
 class RecipesController < ApplicationController
   def index
-<<<<<<< Updated upstream
-    @recipes = SpoonacularService.fetch_recipes(params[:query])
-=======
     @preferences = current_user.preference
     @recipes = SpoonacularService.fetch_recipes(@preferences, params[:query])
 
@@ -10,7 +7,6 @@ class RecipesController < ApplicationController
       format.html
       format.json { render json: @recipes }
     end
->>>>>>> Stashed changes
   end
 
   def show

@@ -10,34 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
-ActiveRecord::Schema[7.0].define(version: 20_230_816_200_721) do
-=======
-ActiveRecord::Schema[7.0].define(version: 2023_08_17_092554) do
->>>>>>> Stashed changes
+ActiveRecord::Schema[7.0].define(version: 20_230_817_092_554) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "preferences", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.boolean "vegetarian", default: false
-    t.boolean "vegan", default: false
-    t.boolean "gluten_free", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_preferences_on_user_id"
+  create_table 'preferences', force: :cascade do |t|
+    t.bigint 'user_id', null: false
+    t.boolean 'vegetarian', default: false
+    t.boolean 'vegan', default: false
+    t.boolean 'gluten_free', default: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_preferences_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username", limit: 50, null: false
-    t.string "email", limit: 100, null: false
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'username', limit: 50, null: false
+    t.string 'email', limit: 100, null: false
+    t.string 'password_digest'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-<<<<<<< Updated upstream
-=======
 
-  add_foreign_key "preferences", "users"
->>>>>>> Stashed changes
+  add_foreign_key 'preferences', 'users'
 end
