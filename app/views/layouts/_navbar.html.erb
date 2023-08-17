@@ -6,6 +6,9 @@
       <ul class="navbar-nav ml-auto">
         <% if current_user %>
         <li class="nav-item">
+          <li class="nav-item">
+            <%= link_to 'Preferences', preferences_path, class: 'nav-link' %>
+          </li>
           <%= form_for(current_user, url: logout_path, method: :delete) do |f| %>
             <%= f.submit "Sign Out", class: 'btn btn-danger' %>
           <% end %>
