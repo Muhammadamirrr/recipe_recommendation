@@ -20,7 +20,13 @@ RSpec.configure do |config|
     # Stub GET request to Spoonacular API
     stub_request(:get, "#{base_uri}/1/information?apiKey=#{ENV.fetch('SPOONACULAR_API_KEY')}")
       .to_return(status: 200, body: { "id": 1, "title": 'Cannellini Bean and Asparagus Salad with Mushrooms',
-                                      "image": 'spec/fixtures/rice.jpg', "imageType": 'jpg' }.to_json, headers: { 'Content-Type': 'application/json' })
+                                      "image": 'spec/fixtures/rice.jpg', "imageType": 'jpg',
+                                      'extendedIngredients' => [
+                                        { 'original' => 'Ingredient 1' },
+                                        { 'original' => 'Ingredient 2' }
+                                        # Add more ingredients as needed
+                                      ],
+                                      'instructions' => 'Instructions for the recipe.' }.to_json, headers: { 'Content-Type': 'application/json' })
 
     # Stub GET request to Spoonacular API
     stub_request(:get, "#{base_uri}/complexSearch?apiKey=#{ENV.fetch('SPOONACULAR_API_KEY')}&diet=&number=20&query=")
