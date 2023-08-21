@@ -1,0 +1,21 @@
+{
+  "default": [
+    { "id": 1, "title": "Cannellini Bean and Asparagus Salad with Mushrooms", "image": "spec/fixtures/rice.jpg", "imageType": "jpg" },
+    { "id": 2, "title": "Cauliflower, Brown Rice, and Vegetable Fried Rice", "image": "spec/fixtures/rice.jpg", "imageType": "jpg" }
+  ],
+  "singleResource": {
+    "id": 1,
+    "title": "Cannellini Bean and Asparagus Salad with Mushrooms",
+    "image": "spec/fixtures/rice.jpg",
+    "imageType": "jpg",
+    "extendedIngredients": [
+      { "original": "Ingredient 1" },
+      { "original": "Ingredient 2" }
+    ],
+    "instructions": "Instructions for the recipe."
+  },
+  "searchResponse": [
+    { "id": 1, "title": "Rice Cannellini Bean and Asparagus Salad with Mushrooms", "image": "spec/fixtures/rice.jpg", "imageType": "jpg" },
+    { "id": 2, "title": "Rice Cauliflower, Brown Rice, and Vegetable Fried Rice", "image": "spec/fixtures/rice.jpg", "imageType": "jpg" }
+  ]
+}
